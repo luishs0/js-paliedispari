@@ -27,7 +27,6 @@ function isPalindromo(userWord) {
         
     }
 
-    console.log(wordUser);
 
     let isPali = false;
     if (userWord === wordUser) {
