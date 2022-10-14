@@ -22,6 +22,8 @@ console.log(computerNumber, "numero del computer");
 gameResult(userNumber, computerNumber);
 
 
+
+
 // FUNCTIONS--------------------------------------------------
 function generateRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
@@ -32,11 +34,15 @@ function gameResult(firstNumber, secondNumber) {
     let finalNumber = firstNumber + secondNumber;
     console.log(finalNumber, "somma");
     if (finalNumber % 2 === 0 && (userChoice === "pari" || userChoice === "Pari")) {
-       finalMsg = document.write("Tu hai vinto");
+       finalMsg = "Tu hai vinto";
+       document.write(finalMsg);
     } else if (finalNumber % 2 !== 0 && (userChoice === "dispari" || userChoice === "Dispari")) {
-        finalMsg = document.write("Tu hai vinto")
+        finalMsg = "Tu hai vinto";
+        document.write(finalMsg);
     } else {
-        finalMsg = document.write("Tu hai perso")
+        finalMsg = "Tu hai perso";
+        document.write(finalMsg);
     }
+    console.log(finalMsg);
     return finalMsg
 }
