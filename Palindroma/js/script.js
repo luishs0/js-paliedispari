@@ -2,35 +2,44 @@
 // Creare una funzione per sapere se la parola inserita é palindromo
 
 // let userWord = prompt("Dimmi la tua parola");
-const userWord = prompt("Dimmi una parola");
 
-// function (userWord) { il return mi deve dire true o false } se é palindromo = true, altrimenti false
-    // Identificare se é un palindromo oppure no
-        // descomporre la parola a lettere 
-        // mettere le lettere al contrario in una stringa formando una variabile nuova
-        // let parolaNormale = userWord; let parolaStorta = parola al contrario -> Confrontarli in un if
+isPalindromo(prompt("Dimmi una parola"));
 
 
-let wordUser = "";
-for (let i = 0; i < userWord.length; i++) {
-    
-    let numberLetter = userWord.length - (1 + i);
+function isPalindromo(userWord) {
+    // userWord = prompt("Dimmi una parola");
 
-    //a wordUser li aggiungo ogni giro userWord[numberLetter] (quindi +=)
+    // function (userWord) { il return mi deve dire true o false } se é palindromo = true, altrimenti false
+        // Identificare se é un palindromo oppure no
+            // descomporre la parola a lettere 
+            // mettere le lettere al contrario in una stringa formando una variabile nuova
+            // let parolaNormale = userWord; let parolaStorta = parola al contrario -> Confrontarli in un if
 
-    wordUser += userWord[numberLetter];
-    
-}
 
-console.log(wordUser);
+    let wordUser = "";
+    for (let i = 0; i < userWord.length; i++) {
+        
+        let numberLetter = userWord.length - (1 + i);
 
-let isPali = false;
-if (userWord === wordUser) {
-    isPali = true;
-}
+        //a wordUser li aggiungo ogni giro userWord[numberLetter] (quindi +=)
 
-if (isPali === true) {
-    document.write("Palindromo")
-} else {
-    document.write("Non é palindromo")
+        wordUser += userWord[numberLetter];
+        
+    }
+
+    console.log(wordUser);
+
+    let isPali = false;
+    if (userWord === wordUser) {
+        isPali = true;
+    }
+
+    let msg = document.getElementById("msg");
+
+    if (isPali === true) {
+        msg.innerHTML = `La parola ${userWord} SI é Palindromo`;
+    } else {
+        msg.innerHTML = `La parola ${userWord} NON é palindromo`;
+    }
+    return isPali;
 }
